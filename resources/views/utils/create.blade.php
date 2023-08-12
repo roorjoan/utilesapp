@@ -4,14 +4,14 @@
         @csrf
         <div class="col-md-6">
             <label class="form-label">Nombre</label>
-            <input type="text" class="form-control" name="name"{{ old('name') }}>
+            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
             @error('name')
                 <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         <div class="col-6">
             <label class="form-label">URL</label>
-            <input type="text" class="form-control" name="url"{{ old('url') }}>
+            <input type="text" class="form-control" name="url" value="{{ old('url') }}">
             @error('url')
                 <p class="text-danger">{{ $message }}</p>
             @enderror

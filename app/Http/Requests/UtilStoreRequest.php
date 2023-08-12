@@ -27,7 +27,7 @@ class UtilStoreRequest extends FormRequest
             'name' => 'required|string',
             'description' => 'required|string',
             'url' => 'nullable|url',
-            'file' => 'required|mimes:png,jpg,jpeg|max:5120',
+            'file' => 'required|image|max:3072',
         ];
     }
 }
