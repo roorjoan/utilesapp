@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Util;
 use App\Http\Requests\UtilStoreRequest;
+use App\Models\Util;
 
 class UtilController extends Controller
 {
@@ -20,11 +20,11 @@ class UtilController extends Controller
     private function storeUtilFile($file)
     {
         $fileName = $file->getClientOriginalName();
-        $fileUniqueName = date('YmdHis') . '_' . $fileName;
+        $fileUniqueName = date('YmdHis').'_'.$fileName;
 
         $file->storeAs('public/uploads', $fileUniqueName);
 
-        return 'storage/uploads/' . $fileUniqueName;
+        return 'storage/uploads/'.$fileUniqueName;
     }
 
     public function store(UtilStoreRequest $request)
@@ -35,7 +35,7 @@ class UtilController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'url' => $request->url,
-            'file' => $path
+            'file' => $path,
         ]);
 
         return to_route('utils.index');
